@@ -7,18 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrewComponent implements OnInit {
 
-  crew: object[] = [
-    {name: "Eileen Collins", firstMission: false},
-    {name: "Mae Jemison", firstMission: false},
-    {name: "Ellen Ochoa", firstMission: true}
+  inCrew: boolean = false;
+  crew: object[] = [];
+
+  candidates: object[] = [
+    {name: "Sally Ride", photo: 'https://handlers.education.launchcode.org/static/images/sally-ride.jpg'},
+    {name: "Mae Jemison", photo: 'https://handlers.education.launchcode.org/static/images/mae-jemison.jpg'},
+    {name: "Ellen Ochoa", photo: 'https://handlers.education.launchcode.org/static/images/ellen-ochoa.jpg'},
+    {name: "Frederick Gregory", photo: 'https://handlers.education.launchcode.org/static/images/frederick-gregory.jpg'},
+    {name: "Guion Bluford", photo: 'https://handlers.education.launchcode.org/static/images/guion-bluford.jpg'},
+    {name: "Kjell Lindgren", photo: 'https://handlers.education.launchcode.org/static/images/kjell-lindgren.jpg'},
+    {name: "Jeanette Epps", photo: 'https://handlers.education.launchcode.org/static/images/jeanette-epps.jpg'}
   ];
 
   memberBeingEdited: object = null;
   
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
+
+  // Code the 'addCrewMember' function here:
 
   add(memberName: string, isFirst: boolean) {
     let inCrew: boolean = false;
