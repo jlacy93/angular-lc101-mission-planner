@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+interface EquiptmentItem{
+  name:string;
+  mass: number;
+}
 
 @Component({
   selector: 'app-equipment',
@@ -27,5 +31,15 @@ export class EquipmentComponent implements OnInit {
    ngOnInit() { }
 
    // Code your addItem function here:
+
+   addItem(item: EquiptmentItem): boolean {
+    this.cargoHold.push(item);
+    this.cargoMass += item.mass;
+    return this.maximumAllowedMass - this.cargoMass <= 200
+   }
    
+   emptyCargoHold(){
+    this.cargoHold = [];
+    this.cargoMass = 0
+   }
 }
